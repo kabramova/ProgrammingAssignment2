@@ -1,12 +1,12 @@
-# This script contains 2 functions that implement caching of the matrix caching.
+# This script contains 2 functions that implement caching of the matrix inverse.
 # Once computed, the inverse of the matrix is cached to memory and can be
 # retrieved, provided that the contents of the matrix have not changed.
 # Computing the inverse of a square matrix is done with the built-in solve 
 # function. The script assumes that the input matrix is invertible.
 
-# makeCacheMatrix function creates a special "matrix" object that can cache its inverse.
-# The object is a list of functions to set and get the value of the matrix; and
-# to set and get the value of the matrix inverse.
+# makeCacheMatrix function creates a special "matrix" object that can cache its 
+# inverse. The object is a list of methods to set and get the contents of the 
+# matrix; and to set and get the value of the matrix inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL # we haven't calculated the inverse yet so it's null
@@ -33,7 +33,6 @@ makeCacheMatrix <- function(x = matrix()) {
 # and skips the computation.
 # Otherwise, it computes the inverse of the matrix and sets the value of the 
 # inverse in the cache via the setinverse function.
-
 
 cacheSolve <- function(x, ...) {
     inv <- x$getinverse()
